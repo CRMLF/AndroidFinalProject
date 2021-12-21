@@ -110,10 +110,6 @@ public class p1 extends Fragment {
         defaultCity = sp.getString("city", "杭州");
         kcity = sp.getString("in", "厦门");
         Log.i("TAG", "init: "+kcity);
-//        for(String x: citys.values()){
-//            p1.getCityWeather(x);
-//        }
-
         if (!citys.containsKey(kcity)) {
             citys.put(kcity, kcity);
             p1.getCityWeather(kcity);
@@ -122,7 +118,6 @@ public class p1 extends Fragment {
         // recyclerView初始化
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);
-
     }
 
     /**
@@ -186,13 +181,11 @@ public class p1 extends Fragment {
                 // 只获取当日天气信息
                 JSONObject weatherObject = forecastArray.getJSONObject(0);
                 Weather weather = new Gson().fromJson(weatherObject.toString(), Weather.class);
-//                Log.i("WEATHER", weather.toString());
                 String temperature = weather.getLow().substring(3) + " ~ " + weather.getHigh().substring(3);
                 String windPower = "风力：" + weather.getFengli().charAt(9) + "级";
                 String windDt = "风向：" + weather.getFengxiang();
                 // UI处理
                 tvCity.setText(city + "\n" + temperature + "\n" + windPower + "\n" + windDt);
-
             } catch (JSONException e) {
                 ToastUtil.missToast(getContext());
                 ToastUtil.showToast(getContext(), "系统异常，请稍后再试", Toast.LENGTH_SHORT);

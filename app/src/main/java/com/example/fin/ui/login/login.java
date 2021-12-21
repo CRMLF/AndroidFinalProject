@@ -53,7 +53,6 @@ public class login extends AppCompatActivity {
                 }
             }
         });
-
     }
     public void init() {
         SharedPreferences sp = getApplication().getSharedPreferences("com.example.fin_preferences", Context.MODE_PRIVATE);
@@ -67,5 +66,4 @@ public class login extends AppCompatActivity {
             finish();
         }
     }
-
 }

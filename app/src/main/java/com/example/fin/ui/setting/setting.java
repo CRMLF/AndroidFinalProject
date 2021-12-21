@@ -259,7 +259,6 @@ public class setting extends PreferenceFragmentCompat   implements Preference.On
                     low = low.substring(3, low.length() - 1);
                     high = high.substring(3, high.length() - 1);
                     WeatherData weatherData = new WeatherData();
-//                    weatherData.setCity(city);
                     weatherData.setDate(city+today);
                     weatherData.setLow(low);
                     weatherData.setHigh(high);
@@ -271,7 +270,6 @@ public class setting extends PreferenceFragmentCompat   implements Preference.On
                     if (sqlData == null) {
                         weatherDataDao.insertAll(weatherData);
                     }
-
                 } catch (IOException | JSONException e) {
                     e.printStackTrace();
                 }

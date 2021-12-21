@@ -69,7 +69,6 @@ public class HomeFragment extends Fragment implements LocationSource, CompoundBu
         }
         myLocationStyle = new MyLocationStyle();//初始化定位蓝点样式类
         aMap.setMyLocationStyle(myLocationStyle);
-
         aMap.getUiSettings().setMyLocationButtonEnabled(true);
         aMap.setLocationSource(this);
         aMap.setMyLocationEnabled(true);
@@ -94,15 +93,16 @@ public class HomeFragment extends Fragment implements LocationSource, CompoundBu
                 e.printStackTrace();
             }
             clientOption=new AMapLocationClientOption();
-            clientOption.setInterval(15000);//设置定位间隔,单位毫秒,默认为2000ms
+            //设置定位间隔,单位毫秒,默认为2000ms
+            clientOption.setInterval(15000);
             locationClient.setLocationListener(this);
-            clientOption.setLocationMode(AMapLocationClientOption.AMapLocationMode.Hight_Accuracy);//高精度定位
-            clientOption.setOnceLocationLatest(true);//设置单次精确定位
+            //高精度定位
+            clientOption.setLocationMode(AMapLocationClientOption.AMapLocationMode.Hight_Accuracy);
+            //设置单次精确定位
+            clientOption.setOnceLocationLatest(true);
             locationClient.setLocationOption(clientOption);
             locationClient.startLocation();
-
         }
-
     }
     /**
      * 停止定位
@@ -118,12 +118,12 @@ public class HomeFragment extends Fragment implements LocationSource, CompoundBu
 
     public void onLocationChanged(AMapLocation aMapLocation) {
         univViewModel = new ViewModelProvider(getActivity(),new ViewModelProvider.NewInstanceFactory()).get(HomeViewModel.class);
-//        System.out.println("所在城市："+aMapLocation.getCity());
         univViewModel.gem().setValue(aMapLocation.getCity());
         if (mListener != null&&aMapLocation != null) {
             if (aMapLocation != null
                     &&aMapLocation.getErrorCode() == 0) {
-                mListener.onLocationChanged(aMapLocation);// 显示系统小蓝点
+                // 显示系统小蓝点
+                mListener.onLocationChanged(aMapLocation);
             } else {
                 String errText = "定位失败," + aMapLocation.getErrorCode()+ ": " + aMapLocation.getErrorInfo();
                 Log.e("AmapErr",errText);
