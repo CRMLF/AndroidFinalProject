@@ -65,12 +65,12 @@ public class NotificationsFragment extends Fragment {
     private Integer dayPast;
     private Integer dayFuture;
 
-    public static String[] datePast = new String[7];//X轴的标注
-    public static String[] dateFuture = new String[7];
-    public static int[] tempLowPast = new int[7];//图表的数据点
-    public static int[] tempHighPast = new int[7];//图表的数据点
-    public static int[] tempLowFuture = new int[7];//图表的数据点
-    public static int[] tempHighFuture = new int[7];//图表的数据点
+    public static String[] datePast = new String[11];//X轴的标注
+    public static String[] dateFuture = new String[11];
+    public static int[] tempLowPast = new int[11];//图表的数据点
+    public static int[] tempHighPast = new int[11];//图表的数据点
+    public static int[] tempLowFuture = new int[11];//图表的数据点
+    public static int[] tempHighFuture = new int[11];//图表的数据点
     private List<PointValue> pointLowPast = new ArrayList<>();
     private List<PointValue> pointHighPast = new ArrayList<>();
     private List<PointValue> pointLowFuture = new ArrayList<>();
