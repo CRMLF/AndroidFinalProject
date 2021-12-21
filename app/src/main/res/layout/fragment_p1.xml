@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.weather.p1"
+    android:background="@drawable/back">
+
+
+    <!-- TODO: Update blank fragment layout -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/c1"
+        android:layout_width="348dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="20dp"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="348dp"
+            android:layout_height="200dp"
+            android:background="@drawable/hangzhou"
+            app:cardCornerRadius="20dp"></ImageView>
+
+        <TextView
+            android:id="@+id/city"
+            android:layout_width="340dp"
+            android:layout_height="200dp"
+            android:paddingStart="30dp"
+            android:paddingTop="10dp"
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            tools:ignore="RtlSymmetry" />
+
+        <Button
+            android:id="@+id/lb"
+            android:layout_width="45dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="340dp"
+            android:layout_marginTop="1008dp"
+            android:backgroundTint="#333"
+            android:text="去看看"
+            android:textColor="@color/white"
+            android:textSize="10dp"></Button>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/today"
+        android:layout_width="300dp"
+        android:layout_height="348dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="240dp"></androidx.recyclerview.widget.RecyclerView>
+</FrameLayout>

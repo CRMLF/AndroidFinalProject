@@ -1,0 +1,57 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title=" "></PreferenceCategory>
+    <PreferenceCategory android:title="登录设置">
+        <SwitchPreference
+            android:key="login"
+            android:icon="@drawable/setting"
+            android:summaryOff="下次需要输入密码登录"
+            android:summaryOn="下次将自动登录"
+            android:title="自动登录" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="用户信息设置">
+        <EditTextPreference
+            android:dialogTitle="请输入旧密码"
+            android:icon="@drawable/person"
+            android:inputType="textPassword"
+            android:key="confirm"
+            android:title="身份认证" />
+        <EditTextPreference
+            android:dialogTitle="请输入用户名"
+            android:enabled="false"
+            android:icon="@drawable/confirm"
+            android:key="username"
+            android:title="用户名修改" />
+        <EditTextPreference
+            android:dialogTitle="请输入密码"
+            android:enabled="false"
+            android:icon="@drawable/lock"
+            android:inputType="textPassword"
+            android:key="password"
+            android:title="密码修改" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="天气城市设置">
+        <EditTextPreference
+            android:dialogTitle="请输入默认城市"
+            android:icon="@drawable/default_grey"
+            android:key="city"
+
+            android:title="默认城市修改" />
+        <EditTextPreference
+            android:dialogTitle="请输入感兴趣城市"
+            android:key="in"
+            android:icon="@drawable/favorite"
+            android:title="兴趣城市增加" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="历史天气设置">
+        <ListPreference
+            android:dialogTitle="选择天数"
+            android:entries="@array/day"
+            android:icon="@drawable/cloudy_grey"
+            android:entryValues="@array/day_value"
+            android:key="day_past"
+            android:title="历史天数修改" />
+    </PreferenceCategory>
+</PreferenceScreen>
